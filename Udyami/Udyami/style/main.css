@@ -1,0 +1,179 @@
+:root {
+  /* Logo-Inspired Dark Tones */
+  --deep-navy: #071739;
+  --rich-navy: #0D1B2A;
+
+  /* Original Palette */
+  --soft-blue: #4B6382;
+  --pale-purple: #A4B5C4;
+  --light-gray: #CDD5DB;
+  --earth-tone: #A68868;
+  --soft-peach: #E3C39D;
+
+  /* Extra Added */
+  --contrast-gold: #F3A642;
+  --background-light: linear-gradient(135deg,#F5F7FA,#f9f9f9);
+
+  --gradient-primary: linear-gradient(135deg, #E3C39D, #f0f2f3);
+  --gradient-secondary: linear-gradient(135deg, #4B6382, #0D1B2A);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--background-light);
+  color: var(--deep-navy);
+}
+
+/* Header/Nav */
+header {
+  background-color: var(--rich-navy);
+  padding: 1em 2em;
+  position: relative;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: #f4f4f4;
+  padding: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.burger {
+  font-size: 2em;
+  cursor: pointer;
+  color: var(--soft-peach);
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 1.5em;
+  top: 70px;
+  background-color: var(--rich-navy);
+  border: 1px solid var(--pale-purple);
+  border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+  min-width: 150px;
+}
+
+.dropdown-menu a {
+  color: var(--soft-peach);
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--earth-tone);
+  color: white;
+}
+
+.dropdown-menu.show {
+  display: flex;
+}
+
+/* Hero Section */
+.hero {
+  padding: 3em 1em;
+  text-align: center;
+  background: linear-gradient(135deg, var(--soft-peach), var(--earth-tone));
+  color: var(--deep-navy);
+}
+
+.hero h1 {
+  margin-bottom: 0.5em;
+  font-size: 2.5em;
+}
+
+.hero p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Features Grid */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2em;
+  gap: 2em;
+}
+
+.feature {
+  background: linear-gradient(135deg, #4B6382, #4B6382); /* Looks flat, but it's a gradient, just adding flat color gave white flashes when removing mouse*/
+  color: white;
+  width: 220px;
+  height: 220px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1em;
+  font-size: 1.2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+
+}
+
+.feature:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  background: var(--gradient-secondary);
+}
+
+/* Footer */
+footer {
+  background-color: var(--soft-blue);
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+/* Night Mode Overrides */
+.dark-mode {
+  --background-light: #0B0F1A;
+  --deep-navy: #E3E3E3;
+  --rich-navy: #151F30;
+  --soft-blue: #2D3A53;
+  --pale-purple: #8899AA;
+  --earth-tone: #A68868;
+  --soft-peach: #F2D3B5;
+
+  --gradient-primary: linear-gradient(135deg, #0D1B2A, #2D3A53);
+  --gradient-secondary: linear-gradient(135deg, #2D3A53, #0B0F1A);
+  transition: color 0.4s ease-in-out, background 0.4s ease-in-out;
+}
+.dark-mode .hero {
+  color: #071739; /* Lighter for heading */
+}
+
+.right-icons {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+#toggle-theme {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: var(--soft-peach);
+  transition: color 0.3s ease;
+}
+
+#toggle-theme:hover {
+  color: var(--contrast-gold);
+}
